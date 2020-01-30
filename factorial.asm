@@ -15,7 +15,6 @@
 	prompt: .asciiz "Enter the number:\n"
 	messageOne: .asciiz "Factorial of "
 	messageTwo: .asciiz " is:\n"
-	endl: .asciiz "\n"
 #Text Area (i.e. instructions)
 .text
 main:
@@ -54,9 +53,6 @@ print:
 	move $a0, $t0
 	syscall
 
-	li $v0, 4
-	la $a0, endl
-	syscall
 exit:
 	li $v0, 10
 	syscall
