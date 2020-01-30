@@ -12,7 +12,7 @@
 #   cout << "Factorial of " << x << " is:\n" << fn << "\n";
 #
 .data
-	prompt: .asciiz "Enter the number:\n"
+	prompt: .asciiz "Enter a number:\n"
 	messageOne: .asciiz "Factorial of "
 	messageTwo: .asciiz " is:\n"
 #Text Area (i.e. instructions)
