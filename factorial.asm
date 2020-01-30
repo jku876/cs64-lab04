@@ -14,7 +14,7 @@
 .data
 	prompt: .asciiz "Enter a number:\n"
 	messageOne: .asciiz "Factorial of "
-	messageTwo: .asciiz " is:\n"
+	messageTwo: .asciiz " is: \n"
 #Text Area (i.e. instructions)
 .text
 main:
