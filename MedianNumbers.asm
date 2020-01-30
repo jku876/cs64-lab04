@@ -45,17 +45,22 @@ main:
 
 	#compare
 	blt $t1, $t0, comp1
-	blt $t2, $t1, comp2
+	blt $t2, $t1, comp3
 	move $t3, $t1
 	j printMedian
 
 comp1:
-	blt $t2, $t0, last
-	move $t3, $t0
+	blt $t1, $t2, comp2
+	move $t3, $t1
 	j printMedian
 
 comp2:
 	blt $t2, $t0, last
+	move $t3, $t0
+	j printMedian
+
+comp3: 
+	blt $t0, $t2, last
 	move $t3, $t0
 	j printMedian
 
@@ -69,7 +74,7 @@ printMedian:
 	syscall
 
 	li $v0, 1
-	li $a0, $t4
+	move $a0, $t3
 	syscall
 
 exit:
