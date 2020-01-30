@@ -13,13 +13,37 @@
 #
 .data
 
-	# TODO: Write your initializations here
+	prompt1: .asciiz "Enter the number:\n"
+	message1: .asciiz "Factorial of "
+	message2: .asciiz " is:\n"
+	endl: .asciiz "\n"
 
 #Text Area (i.e. instructions)
 .text
 main:
+	li $t0, 1
 
-	# TODO: Write your code here
+	li $v0, 4
+	la $a0, prompt
+	syscall
+
+	li $v0, 5
+	syscall
+	move $t1, $v0
+
+	li $t2, 2
+
+loop:
+	blt $t1, $t2, print
+	mult $t0, $t1
+	mflo $t0
+	sub $t1, $t1, 1
+
+print:
+	li $v0, 1
+	li $a0, $t0
+	syscall
 
 exit:
-	# TODO: Write code to properly exit a SPIM simulation
+	li $v0, 10
+	syscall
