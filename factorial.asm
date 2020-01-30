@@ -30,6 +30,7 @@ main:
 	li $v0, 5
 	syscall
 	move $t1, $v0
+	move $t3, $t1
 
 	li $t2, 2
 
@@ -40,8 +41,24 @@ loop:
 	sub $t1, $t1, 1
 
 print:
+	li $v0, 4
+	li $a0, message1
+	syscall
+
+	li $v0, 1
+	li $a0, $t3
+	syscall
+
+	li $v0, 4
+	li $a0, message2
+	syscall
+
 	li $v0, 1
 	li $a0, $t0
+	syscall
+
+	li $v0, 4
+	li $a0, endl
 	syscall
 
 exit:

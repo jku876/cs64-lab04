@@ -72,9 +72,7 @@ printMedian:
 	li $a0, $t4
 	syscall
 
-
 exit:
-	# TODO: Write code to properly exit a SPIM simulation
 	li $v0, 10
 	syscall
 
